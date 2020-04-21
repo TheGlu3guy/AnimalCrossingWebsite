@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="insects.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <img id="logo" src="img/nook_icon.png" alt="animal crossing logo">
+        </div>
+        <div class="cn_filtres">
+            <div class="filtres">
+                <h2 style="width: 35em; color: #fed150">Filtres</h2>
+                <button id="buttonExtend" onclick="afficherLesFiltres()">+</button>
+            </div>
+            <form class="les_filtres" id="les_filtres">
+                <label>
+                    <input type="checkbox" name="Aujourdhui" value="Aujourdhui">Afficher les poissons disponible aujourd'hui
+                </label>
+                <br>
+                <label>
+                    <input type="checkbox" name="Maintenant" value="Maintenant">Afficher les poissons disponible maintenant
+                </label>
+                <br>
+                <label>
+                    <select id="lieu">
+                        <option value="-1" selected>Lieu d'apparition</option>
+                        <option value="0">Ciel</option>
+                        <option value="1">Sol</option>
+                        <option value="2">Arbres</option>
+                        <option value="3">Plage</option>
+                        <option value="4">Boules de neige</option>
+                        <option value="5">Souches d'arbres</option>
+                        <option value="6">Fleurs</option>
+                        <option value="7">Rochers</option>
+                        <option value="8">Surface de l'eau</option>
+                        <option value="9">Rochers (pluie)</option>
+                        <option value="10">Navets pourris</option>
+                        <option value="11">Fleurs blanches</option>
+                        <option value="12">Lumières</option>
+                        <option value="13">Sur les villageois</option>
+                        <option value="14">Palmiers</option>
+                        <option value="15">Sous la terre</option>
+                    </select>
+                </label>
+
+                <h4><U>Heure de présence</U></h4>
+                <table class="tableau_heure" id="tableau_heure">
+                    <tbody>
+                    <tr>
+                        <td><button class="bouton_heure">0h</button></td>
+                        <td><button class="bouton_heure">1h</button></td>
+                        <td><button class="bouton_heure">2h</button></td>
+                        <td><button class="bouton_heure">3h</button></td>
+                        <td><button class="bouton_heure">4h</button></td>
+                        <td><button class="bouton_heure">5h</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="bouton_heure">6h</button></td>
+                        <td><button class="bouton_heure">7h</button></td>
+                        <td><button class="bouton_heure">8h</button></td>
+                        <td><button class="bouton_heure">9h</button></td>
+                        <td><button class="bouton_heure">10h</button></td>
+                        <td><button class="bouton_heure">11h</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="bouton_heure">12h</button></td>
+                        <td><button class="bouton_heure">13h</button></td>
+                        <td><button class="bouton_heure">14h</button></td>
+                        <td><button class="bouton_heure">15h</button></td>
+                        <td><button class="bouton_heure">16h</button></td>
+                        <td><button class="bouton_heure">17h</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="bouton_heure">18h</button></td>
+                        <td><button class="bouton_heure">19h</button></td>
+                        <td><button class="bouton_heure">20h</button></td>
+                        <td><button class="bouton_heure">21h</button></td>
+                        <td><button class="bouton_heure">22h</button></td>
+                        <td><button class="bouton_heure">23h</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h4><U>Mois de présence</U></h4>
+                <table class="tableau_mois" id="tableau_mois">
+                    <tbody>
+                    <tr>
+                        <td><button value="0" class="bouton_mois">janvier</button></td>
+                        <td><button value="1" class="bouton_mois">février</button></td>
+                        <td><button value="2" class="bouton_mois">mars</button></td>
+                        <td><button value="3" class="bouton_mois">avril</button></td>
+                    </tr>
+                    <tr>
+                        <td><button value="4" class="bouton_mois">mai</button></td>
+                        <td><button value="5" class="bouton_mois">juin</button></td>
+                        <td><button value="6" class="bouton_mois">juillet</button></td>
+                        <td><button value="7" class="bouton_mois">août</button></td>
+                    </tr>
+                    <tr>
+                        <td><button value="8" class="bouton_mois">septembre</button></td>
+                        <td><button value="9" class="bouton_mois">octobre</button></td>
+                        <td><button value="10" class="bouton_mois">novembre</button></td>
+                        <td><button value="11" class="bouton_mois">décembre</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <input type="submit" value="Filtrer">
+            </form>
+        </div>
+
+        <div class="cn_rarete">
+            <div class="rarete" style="background-color:#ffd700"></div>
+            <p class="rarete_tiltle">commun</p>
+            <div class="rarete" style="background-color:#ff7c47"></div>
+            <p class="rarete_tiltle">rare</p>
+            <div class="rarete" style="background-color:#ff3030"></div>
+            <p class="rarete_tiltle">très rare</p>
+        </div>
+        <div style="margin: 0 auto; width: 14em">
+            <button id="suppr_filtres" onclick="clear_filter()">Supprimer les filtres</button>
+        </div>
+        <table class="tableau">
+            <thead>
+            <tr>
+                <th class="titres_tableau_poisson" onclick="trierParRarete()">Icon</th>
+                <th class="titres_tableau_poisson" onclick="trierParNom()">Insecte</th>
+                <th>Période</th>
+                <th>Heure</th>
+                <th class="titres_tableau_poisson" onclick="trierParLieu()">Lieu / Météo</th>
+                <th class="titres_tableau_poisson" onclick="trierParPrix()" style="width: 5em">Prix</th>
+            </tr>
+            </thead>
+            <tbody id="tab">
+            </tbody>
+        </table>
+    </div>
+    <div id="floating_selection">
+        <a href="index.html"><img style="z-index: 4; filter: opacity(100%);" onclick="" id="floating_selection1" src="img/poissons.jpg" alt="icone poisson"></a>
+        <img style="z-index: 3; filter: opacity(50%);" onclick="" id="floating_selection2" src="img/insectes.jpg" alt="icone insecte">
+    </div>
+    <img src="img/Animal-Crossing-fond2.jpg" alt="Animal crossing fond" id="fond">
+</body>
+</html>

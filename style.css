@@ -1,0 +1,148 @@
+body{
+    font-family: arial,sans-serif;
+}
+h4{
+    text-align: center;
+}
+#fond{
+    z-index: -1;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+.container{
+    width: 60em;
+    margin: 0 auto;
+    background-color: #2d2d2d;
+}
+#buttonExtend{
+    width: 3em;
+    height: 3em;
+    border: none;
+    background-color: #6abfff;
+    font-size: 1em;
+    font-weight: bold;
+    margin: auto 0;
+    border-radius: 0.5em;
+    box-shadow: -3px 3px 0 #4A6593;
+}
+#logo{
+    width: 5em;
+    height: 5em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.cn_filtres{
+    width: 40em;
+    margin: 1em auto;
+}
+.filtres{
+    display: flex;
+    background-color: #a5723b;
+    padding: 1em;
+    border-radius: 1em;
+}
+.cn_rarete{
+    display: flex;
+    width: 35em;
+    margin-left: auto;
+    margin-right: auto;
+    color: #c4c8cc;
+}
+.rarete{
+    width: 2em;
+    height: 2em;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.rarete_tiltle{
+    width: 10em;
+    margin-left: 1em;
+}
+
+.tableau{
+    width: 55em;
+    margin: 0 auto;
+}
+.poisson_icon{
+    width: 4em;
+    height: 4em;
+}
+.titres_tableau_poisson{
+    cursor: pointer;
+}
+.les_filtres{
+    display: none;
+    padding: 2em;
+    background-color: #e7d0a6;
+    border-radius: 1em;
+}
+.les_filtres *{
+    margin-top: 1em;
+}
+.tableau_heure{
+    border-collapse: collapse;
+    width: 20em;
+    margin: 1em auto;
+}
+.tableau_heure td{
+    /*border: 1px solid black;*/
+    padding: 0;
+}
+.tableau_mois{
+    border-collapse: collapse;
+    width: 20em;
+    margin: 0 auto;
+}
+.tableau_mois td{
+    /*border: 1px solid black;*/
+    padding: 0;
+}
+.bouton_heure{
+    width: 4em;
+    height: 2em;
+    border: none;
+    margin: 0;
+}
+.bouton_mois{
+    width: 6em;
+    height: 2em;
+    border: none;
+    margin: 0;
+}
+#suppr_filtres{
+    width: 15em;
+    padding: 0.5em;
+    border: none;
+    background-color: #89b043;
+    color: white;
+    display: none;
+}
+#suppr_filtres:hover{
+    background-color: #a0bf68;
+}
+#floating_selection img{
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+}
+#floating_selection{
+    position: fixed;
+    top: 10%;
+    z-index: 2;
+}
+#floating_selection1{
+    z-index: 3;
+    filter: opacity(50%);
+}
+#floating_selection2{
+    z-index: 4;
+    position: relative;
+    left: -67px;
+    top: 3em;
+}
+thead{
+    color: #c4c8cc;
+}
